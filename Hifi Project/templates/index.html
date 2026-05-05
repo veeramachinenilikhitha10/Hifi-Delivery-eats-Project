@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .fixed-bottom-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"> <img src="..\static\images\Hifi_logo.png"></div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#filters">Filters</a></li>
+            <li><a href="#menu-items">Menu</a></li>
+            <li><a href="/">Profile</a></li>
+        </ul>
+    </nav>
+    <header class="flex justify-between items-center p-4 bg-white shadow-md">
+        <h1>Menu Management System</h1>
+    </header>
+
+    <main class="flex">
+        <aside id="filters" class="w-1/4 p-6">
+            <h2>Filters</h2>
+            <div id="category-filters" class="filter-section">
+                <h3>Categories</h3>
+                <!-- Category checkboxes will be dynamically inserted here -->
+            </div>
+            <div id="dietary-preference-filters" class="filter-section">
+                <h3>Dietary Preferences</h3>
+                <!-- Dietary preference checkboxes will be dynamically inserted here -->
+            </div>
+            <button id="apply-filters" class="mt-4 px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600">Apply Filters</button>
+        </aside>
+
+        <section id="menu-items" class="w-3/4 p-6">
+            <div id="menu-controls" class="mb-4">
+                <input type="text" id="search-input" placeholder="Search menu items..." class="p-2 border border-gray-300 rounded-lg w-full">
+                <select id="sort-select" class="mt-2 p-2 border border-gray-300 rounded-lg w-full">
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+            </div>
+
+            <div id="menu-items-container">
+                <!-- Menu items will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

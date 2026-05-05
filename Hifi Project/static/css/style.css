@@ -1,0 +1,420 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+/* Navbar2 */
+.navbar2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD3D3;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD3D3;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar2 .logo img {
+  height: 4rem;
+}
+.navbar2 .heading {
+  flex: 2; /* Center-align the heading */
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 250px;
+  border: 1px solid black;
+  
+}
+.navbar .logo img {
+  height: 4rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ff5733;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items */
+    align-items: flex-start;
+    padding: 20px; /* Adjust padding */
+    width: 100%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%; /* Ensure menu takes full width */
+    margin-top: 10px;
+    padding: 0; /* Remove extra padding */
+    text-align: left; /* Align text to the left */
+  }
+
+  .navbar ul li {
+    margin: 10px 0; /* Adjust margin for stacked items */
+    width: 100%; /* Ensure list items take up the full width */
+  }
+
+  .navbar ul li a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px; /* Add padding for better touch target */
+  }
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #F17272;
+  color: #333;
+  border-bottom-left-radius: 50% 10px;
+  border-bottom-right-radius: 50% 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header>h1{
+  display: inline-block;
+      animation-name: heading;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 2ms;
+}
+
+@keyframes heading{
+  0% {
+    transform: translateZ(-1000px); /* Move it far away initially */
+    opacity: 0; /* Make it invisible at the start */
+  }
+  100% {
+    transform: translateZ(0); /* Bring it to its original position */
+    opacity: 1; /* Make it fully visible */
+  }
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem; /* Adjust padding for smaller screens */
+    text-align: center; /* Ensure text is centered */
+    width: 100%;
+  }
+
+  header > h1 {
+    font-size: 1.5rem; /* Adjust font size of the heading for smaller screens */
+    margin: 0; /* Adjust margins */
+  }
+}
+
+
+main {
+  display: flex;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+aside {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-right: 2rem;
+}
+
+#menu-items {
+  flex: 3;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 0.5rem;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+#apply-filters {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#apply-filters:hover {
+  background-color: #2980b9;
+}
+
+#menu-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#search-input, #sort-select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+#search-input {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+#menu-items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.menu-item {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.menu-item h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.menu-item p {
+  margin: 0.5rem 0;
+}
+
+.menu-item .price {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.menu-item .category {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.menu-item .dietary-preferences {
+  font-size: 0.9em;
+  color: #27ae60;
+}
+/* Adminpanel css */
+/* Root Variables for Pinkish Palette */
+:root {
+  --primary-pink: #ff6f91; /* Main pink color */
+  --secondary-pink: #f8d7e3; /* Soft pink */
+  --light-pink: #ffe4ec; /* Light pink */
+  --light-peach: #ffe8d6; /* Light peach for background */
+  --hover-pink: #ff4d75; /* Hover effect pink */
+  --gray-text: #6b7280; /* Neutral text color */
+  --light-gray: #f3f4f6; /* Light gray for backgrounds */
+}
+
+/* Body and Layout */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, var(--secondary-pink), #e9d74fb4); /* Updated background color */
+  color: var(--gray-text);
+}
+
+/* Heading Styles */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #ffef44;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-pink);
+}
+
+/* Form Styling */
+form input, form textarea, form select {
+  background-color: var(--light-gray);
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  outline: none;
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 3px var(--secondary-pink);
+}
+
+/* Button Styles */
+button {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Save Button */
+button#saveButton {
+  background-color: var(--primary-pink);
+  color: white;
+}
+
+button#saveButton:hover {
+  background-color: var(--hover-pink);
+}
+
+/* Clear Button */
+button#clearButton {
+  background-color: var(--light-gray);
+  color: var(--gray-text);
+}
+
+button#clearButton:hover {
+  background-color: var(--secondary-pink);
+  color: var(--primary-pink);
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card .card-content {
+  padding: 1rem;
+}
+
+.card h3 {
+  color: var(--primary-pink);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.card button {
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card button.edit {
+  color: var(--primary-pink);
+}
+
+.card button.edit:hover {
+  text-decoration: underline;
+}
+
+.card button.delete {
+  color: #dc2626;
+}
+
+.card button.delete:hover {
+  text-decoration: underline;
+}
+
+/* Grid Layout for Cards */
+#menuItemsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Custom Checkbox Styling */
+input[type="checkbox"] {
+  accent-color: var(--primary-pink);
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive Form Layout */
+@media (min-width: 768px) {
+  form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+  }
+
+  form .col-span-full {
+      grid-column: span 2;
+  }
+}
